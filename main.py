@@ -1,7 +1,3 @@
-# For Debugging
-import sys, os, pathlib
-sys.path.append(str(pathlib.Path(__file__).parent.parent.absolute()))
-
 from py_bridge import nodejs
 from utils import request_logger
 
@@ -35,9 +31,7 @@ with nodejs(keep_alive=True) as node:
     app.use(session({
         'secret': 'my-secret-key',
         'resave': False,
-        'saveUninitialized': False,
-        # "store": SQLiteStore.new()
-        # "store": server.proxymise(SessionStore())
+        'saveUninitialized': False
     }))
 
     app.use(passport.session())
