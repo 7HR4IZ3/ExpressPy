@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul>
+	{% for note in notes %}
+	<li>
+		{{ note.name }}: {{ note.body }}
+	</li>
+	{% endfor %}
+</ul>
+<a href="add">Create Note</a>
+{% endblock content %}
